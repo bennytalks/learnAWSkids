@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - 'npm install'  # Install dependencies directly from the frontend folder
+    build:
+      commands:
+        - 'npm run build'  # Build the app directly from the frontend folder
+  artifacts:
+    baseDirectory: build  # Default build output directory for React
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - 'node_modules/**/*'  # Cache node_modules for faster builds
