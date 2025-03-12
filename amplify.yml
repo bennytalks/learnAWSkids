@@ -6,6 +6,7 @@ frontend:
         - 'npm install'  # Install dependencies directly from the frontend folder
     build:
       commands:
+        - chmod +x node_modules/.bin/react-scripts
         - 'npm run build'  # Build the app directly from the frontend folder
   artifacts:
     baseDirectory: build  # Default build output directory for React
