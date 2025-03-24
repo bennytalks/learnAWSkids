@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import CertificateForm from './CertificateForm';
 function App() {
   return (
     <div className="App">
@@ -15,9 +15,12 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+      
         </a>
       </header>
+      <div>
+      <CertificateForm />
+      </div>
     </div>
   );
 }
