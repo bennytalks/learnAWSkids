@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import CertificateForm from './CertificateForm';
+import { Routes } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
         </a>
       </header>
       <div>
+        <Routes/>
       <CertificateForm />
       </div>
     </div>
