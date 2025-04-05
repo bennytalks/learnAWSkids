@@ -10,7 +10,7 @@ const CertificateForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post('https://2d54bas8cj.execute-api.us-east-2.amazonaws.com/CertificateKids', {
+      const res = await axios.post('https://lbmqw3ji7e.execute-api.us-east-2.amazonaws.com/prod/CertificateKids', {
         name,
         score,
       });
