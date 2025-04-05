@@ -1,0 +1,27 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 5px;
+    font-family: "Lora", sans-serif;
+    /* border: hsl(0, 0%, 0%) solid 4px; */
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  /* Paragraph styles */
+  .API-explanation {
+    margin: 0 200px;
+    line-height: 1.8;
+  }
+  
