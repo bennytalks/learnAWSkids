@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 5px;
+    font-family: "Lora", sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  div {
+    padding: 0 20px;
+  }
+  
+  .REST-RESTful-explanation,
+  .Pros-container,
+  .Cons-container,
+  .Conclusion {
+    margin: 0 200px;
+    line-height: 1.8;
+  }
+  
+  .Pros,
+  .Cons {
+    font-weight: bold;
+  }
+  
+  .REST-RESTful-explanation,
+  .Cons-container {
+    margin-bottom: 30px;
+  }
+  
+  .Pros-container {
+    margin-bottom: 15px;
+  }
+  
