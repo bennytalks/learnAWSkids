@@ -1,44 +1,71 @@
+/* Global styles */
 * {
-    margin: 0;
-    padding: 5px;
-    font-family: "Lora", sans-serif;
-  }
-  
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    padding-bottom: 30px;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  div {
-    padding: 0 20px;
-  }
-  
-  .REST-RESTful-explanation,
-  .Pros-container,
-  .Cons-container,
-  .Conclusion {
-    margin: 0 200px;
-    line-height: 1.8;
-  }
-  
-  .Pros,
-  .Cons {
-    font-weight: bold;
-  }
-  
-  .REST-RESTful-explanation,
-  .Cons-container {
-    margin-bottom: 30px;
-  }
-  
-  .Pros-container {
-    margin-bottom: 15px;
-  }
+  margin: 0;
+  padding: 5px;
+  font-family: "Lora", sans-serif;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  padding-bottom: 30px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to right, #FFFFFF, #FFFF00);  /* White to yellow gradient */
+  height: 100vh;  /* Ensure the gradient covers the entire viewport height */
+  margin: 0;      /* Remove default margin */
+}
+
+/* General container padding */
+div {
+  padding: 0 20px;
+}
+
+/* Section styles */
+.REST-RESTful-explanation,
+.Pros-container,
+.Cons-container,
+.Conclusion {
+  margin: 0 200px;
+  line-height: 1.8;
+}
+
+/* Bold styles for specific sections */
+.Pros,
+.Cons {
+  font-weight: bold;
+}
+
+/* Spacing adjustments for specific sections */
+.REST-RESTful-explanation,
+.Cons-container {
+  margin-bottom: 30px;
+}
+
+.Pros-container {
+  margin-bottom: 15px;
+}
+
+/* Image container styles */
+.Image-container {
+  display: flex;               /* Use flexbox on the container */
+  justify-content: space-evenly; /* Horizontally space images evenly */
+}
+
+/* Image styles */
+.Board-game-image,
+.Rulebook-image,
+.Card-game-image {
+  height: 200px;
+  width: auto;
+}
+
   
