@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 5px;
+    font-family: "Lora", sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  .Cloud,
+  .Private-cloud,
+  .Public-cloud,
+  .Hybrid-cloud {
+    margin: 0 200px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+  }
+  
+  .Native-header,
+  .Web-header,
+  .Hybrid-header,
+  .Microservices-header,
+  .Webhooks-header {
+    font-weight: bold;
+  }
+  
+  .Cloud-explanation-pt2 {
+    margin-bottom: 30px;
+  }
