@@ -1,27 +1,44 @@
 /* Global styles */
 * {
-    margin: 0;
-    padding: 5px;
-    font-family: "Lora", sans-serif;
-    /* border: hsl(0, 0%, 0%) solid 4px; */
-  }
-  
-  /* Header styles */
-  header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    padding-bottom: 30px;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  /* Paragraph styles */
-  .API-explanation {
-    margin: 0 200px;
-    line-height: 1.8;
-  }
-  
+  margin: 0;
+  padding: 5px;
+  font-family: "Lora", sans-serif;
+  /* border: hsl(0, 0%, 0%) solid 4px; */
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  padding-bottom: 30px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to right, #FFFFFF, #87CEFA);  /* White to darker baby blue gradient */
+  height: 100vh;  /* Ensure the gradient covers the entire viewport height */
+  margin: 0;      /* Remove default margin */
+}  
+
+/* Paragraph styles */
+.API-explanation {
+  margin: 0 200px;
+  line-height: 1.8;
+}
+
+/* Image container styles */
+.image-container {
+  display: flex;               /* Use flexbox on the container */
+  justify-content: center;     /* Horizontally center the images */
+  justify-content: space-evenly;  /* Evenly space the images */
+}
+
+.Waiter-image, .Menu-image, .Pizza-image {
+  height: 200px;
+  width: auto;             
+}
