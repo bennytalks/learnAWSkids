@@ -36,9 +36,9 @@ const Quiz = ({ questions, onFinish }) => {
           <h2>{q.question}</h2>
           <ul>
             {q.choices.map((choice, index) => (
-              <li key={index}>
+              <div key={index}>
                 <button onClick={() => handleAnswer(index)}>{choice}</button>
-              </li>
+              </div>
             ))}
           </ul>
           <p>

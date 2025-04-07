@@ -1,44 +1,160 @@
-/* Global styles */
-* {
-  margin: 0;
-  padding: 5px;
-  font-family: "Lora", sans-serif;
-  /* border: hsl(0, 0%, 0%) solid 4px; */
-}
-
-/* Header styles */
-header {
+.containerWeb {
+  width: 100%;
+  height: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 15px;
-  padding-bottom: 30px;
+  justify-items: center;
+  flex-direction: column;
 }
-
-header h1 {
-  margin: 0;
+.API-container{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1000px;
+  background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/34101053_rm251-mind-15-b.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 4%;
+  border-radius: 25px;
 }
-
-body {
-  background: linear-gradient(to right, #FFFFFF, #87CEFA);  /* White to darker baby blue gradient */
-  height: 100vh;  /* Ensure the gradient covers the entire viewport height */
-  margin: 0;      /* Remove default margin */
-}  
-
 /* Paragraph styles */
+
 .API-explanation {
-  margin: 0 200px;
   line-height: 1.8;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
 }
 
+.API-explanation:nth-child(1) {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  background-color: rgb(3, 95, 102);
+  background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/yellowpurplebox.jpg);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+}
+
+.API-explanation:nth-child(2){
+  align-self: flex-end;
+  text-align: end;
+  background-color: rgb(110, 76, 133);
+  background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/17145810_Modern_Colorful_Background.jpg);
+  background-blend-mode: overlay;
+  background-size: cover;
+  font-weight: 400;
+}
+
+.API-explanation:nth-child(3){
+  
+  
+  font-size: larger;
+  align-self: flex-start;
+  justify-content: flex-end;
+  background-color: rgb(43, 66, 99);
+  border-radius: 20px;
+  padding:30px;
+ 
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-align:start;
+  color: white;
+  box-shadow: rgba(49, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  font-weight: 400;
+  align-self: flex-start;
+  text-align: start;
+  background-color: rgb(43, 66, 99);
+  background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/919024_OC3WJC0.jpg);
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+
+.API-explanation:nth-child(4){
+  
+  line-height: 1.8;
+  color:rgb(0, 0, 0);
+  font-size: larger;
+  align-self: flex-end;
+  
+  justify-content: flex-end;
+  background-color: rgb(49, 36, 122);
+  border-radius: 20px;
+  padding:30px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  width:600px;
+  box-shadow: rgba(49, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/31958689_v904-nunny-026-g.jpg);
+  background-size: cover;
+  color: white;
+  background-blend-mode: overlay;
+ 
+}
+
+.API-explanation:nth-child(5){
+  
+  line-height: 1.8;
+  font-size: larger;
+  color:white;
+  font-size: 30px;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-color: rgb(152, 125, 226);
+  border-radius: 20px;
+  padding:30px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  width:600px;
+  box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.5);
+  background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/900443_OAK40B0.jpg);
+  background-size: cover;
+  background-blend-mode: overlay;
+}
 /* Image container styles */
 .Image-container {
   display: flex;               /* Use flexbox on the container */
   justify-content: space-evenly;  /* Horizontally space images evenly */
+  
 }
 
 /* Image styles */
-.Waiter-image, .Menu-image, .Pizza-image {
+.Waiter-image{
   height: 200px;
   width: auto;
+}
+
+.Cat-image{
+  height: 300px;
+  padding: 10px;
+  width: auto;
+  border-radius: 50px;
+  align-self: flex-end;
+  box-shadow: 0px 9px 20px rgba(51, 18, 18, 0.5);
+  margin-top: 20px;
+}
+.Menu-image{
+  height: 200px;
+  width: auto;
+}
+
+.Pizza-image{
+  height: 200px;
+  width: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .API-explanation {
+    width: 95% !important;
+    padding: 20px;
+    text-align: left !important;
+    align-self: center !important;
+  }
 }

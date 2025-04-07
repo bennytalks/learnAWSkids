@@ -1,9 +1,4 @@
-/* Global styles */
-* {
-  margin: 0;
-  padding: 5px;
-  font-family: "Lora", sans-serif;
-}
+
 
 /* Header styles */
 header {
@@ -19,7 +14,7 @@ header h1 {
 }
 
 body {
-  background: linear-gradient(to right, #FFFFFF, #FFFF00);  /* White to yellow gradient */
+  
   height: 100vh;  /* Ensure the gradient covers the entire viewport height */
   margin: 0;      /* Remove default margin */
 }

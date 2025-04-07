@@ -1,15 +1,17 @@
 .chapter-bar {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     gap: 1rem;
     margin: 2rem 0;
+    font-weight: 700;
   }
   
   .chapter-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #4a90e2;
+    background-color: #00013d;
     color: white;
     border: none;
     border-radius: 8px;

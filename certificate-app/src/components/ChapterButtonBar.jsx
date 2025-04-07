@@ -7,6 +7,7 @@ const ChapterButtonBar = () => {
 
   return (
     <div className="chapter-bar">
+      <div> Hi, welcome! Please choose a chapter</div>
       <button onClick={() => navigate('/Chapter1')} className="chapter-button">
         Chapter 1
       </button>

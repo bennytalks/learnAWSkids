@@ -3,8 +3,15 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: white;
+  background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/12067352_4884841.jpg);
+  background-size:cover;
 }
-
+.App-header {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
