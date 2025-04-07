@@ -32,13 +32,13 @@ body {
 }
 
 /* Image container styles */
-.image-container {
+.Image-container {
   display: flex;               /* Use flexbox on the container */
-  justify-content: center;     /* Horizontally center the images */
-  justify-content: space-evenly;  /* Evenly space the images */
+  justify-content: space-evenly;  /* Horizontally space images evenly */
 }
 
+/* Image styles */
 .Waiter-image, .Menu-image, .Pizza-image {
   height: 200px;
-  width: auto;             
+  width: auto;
 }
