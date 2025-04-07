@@ -1,4 +1,5 @@
 import React from 'react';
+import './chapter2.css';
 
 const Chapter2 = () => {
   return (
