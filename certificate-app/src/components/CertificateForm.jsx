@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './CertificateForm.css';
+
 
 const CertificateForm = ({ getAverageScore }) => {
   const [name, setName] = useState('');
@@ -26,7 +28,7 @@ const CertificateForm = ({ getAverageScore }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="certificate-form">
       <input
         value={name}
         onChange={(e) => setName(e.target.value)}

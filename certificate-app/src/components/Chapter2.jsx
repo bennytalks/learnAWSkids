@@ -1,46 +1,87 @@
 import React from 'react';
-import './chapter2.css';
+import './Chapter2.css';
+import Quiz from './Quiz';
+import './Quiz.css';
 
-const Chapter2 = () => {
+const chapter2Questions = [
+  {
+    question: "What does REST stand for?",
+    choices: [
+      "Really Exciting Super Technology",
+      "Robot Elephant Super Trainer",
+      "Representational State Transfer"
+    ],
+    correctIndex: 2,
+  },
+  {
+    question: "What is a RESTful API?",
+    choices: [
+      "An API that only works with robots",
+      "A fancy way to order pizza online",
+      "An API that follows REST rules"
+    ],
+    correctIndex: 2,
+  },
+  {
+    question: "Why are RESTful APIs helpful?",
+    choices: [
+      "They follow clear rules that make building and fixing them easier",
+      "They can bake cookies on demand",
+      "They make computers sing songs"
+    ],
+    correctIndex: 0,
+  },
+  {
+    question: "What’s one challenge with RESTful APIs?",
+    choices: [
+      "They always forget your name",
+      "They can be slower with lots of data",
+      "They only work during the daytime"
+    ],
+    correctIndex: 1,
+  }
+];
+
+const Chapter2 = ({ onScore }) => {
+  const handleQuizFinish = (score) => {
+    console.log("Chapter 2 score:", score);
+    if (onScore) onScore(score);
+  };
+
   return (
-    <div>
-  <header>
-    <h1>REST and RESTful</h1>
-  </header>
+    <div className='containerWeb'>
+      <div className='API2-container'>
+        <div className="API2-explanation">
+          REST stands for “Representational State Transfer.”
+        </div>
 
-  <div className="REST-RESTful-explanation">
-    REST stands for “Representational State Transfer.” A REST API is like a set of rules for how computers should ask each other for information – kind of like the rules for playing a board game. If an API follows those rules properly, we call it RESTful. So, REST is the rulebook, and a RESTful API is like someone playing the game the right way.
-  </div>
+        <div className="API2-explanation">
+          <div><img src="https://awskidsimages.s3.us-east-2.amazonaws.com/ruleBook.png" alt="Rulebook" className="Rulebook-image" /></div>
+          A REST API is like a set of rules for how computers should ask each other for information – kind of like the rules for playing a board game.
+        </div>
 
-  <div className="Pros-container">
-    <div className="Pros">Why are RESTful APIs helpful?</div>
-    <ul>
-      <li>They follow clear rules, so developers know exactly how to build and fix them.</li>
-      <li>They make it easier to get information from websites because everything works in a similar way.</li>
-      <li>They can save time by remembering some information (like saving your spot in a video game).</li>
-      <li>They can share information in different ways, like using JSON (which looks like organized lists) or XML (which looks like a recipe with tags).</li>
-    </ul>
-  </div>
+        <div className="API2-explanation">
+          If an API follows those rules properly, we call it RESTful. So, REST is the rulebook, and a RESTful API is like someone playing the game the right way.
+          <div><img src="https://awskidsimages.s3.us-east-2.amazonaws.com/cardGame.png" alt="Card game" className="Card-game-image" /></div>
+          <b>POST</b> is like placing a card from the deck in the game, <br></br><b>GET</b> is like picking up a card from the deck,<br></br> <b>PUT</b> is like putting a card down from your hand,<br></br><b>DELETE</b> is like throwing a card away!
+        </div>
 
-  <div className="Cons-container">
-    <div className="Cons">What is tricky about RESTful APIs?</div>
-    <ul>
-      <li>They aren’t always the best choice for really complicated tasks.</li>
-      <li>They can be hard to set up when the data is super messy or confusing.</li>
-      <li>Sometimes they’re slower when handling huge amounts of information.</li>
-    </ul>
-  </div>
+        <div className="API2-explanation">
+          RESTful APIs are helpful because they follow clear rules, so developers know exactly how to build and fix them. Imagine playing a game without a rule book!
+          <div><img src="https://awskidsimages.s3.us-east-2.amazonaws.com/playingBoardGame.png" alt="Board game" className="Board-game-image" /></div>
+        </div>
 
-  <div className="Conclusion">
-    In short, RESTful APIs are like organized players following the board game rules — they keep things neat and simple, but they might struggle if the game gets too tricky.
-  </div>
+        <div className="API2-explanation">
+         They can be tricky — they aren’t always great for really complicated tasks, or when handling huge amounts of messy data. When you have lots of data, you need to organize it! the rule book only helps when the game pieces are all there and neatly placed so the next player can find them.
+        </div>
 
-  <div className="Image-container">
-    <img src="imgs/playingBoardGame.png" alt="People playing board game" className="Board-game-image" />
-    <img src="imgs/ruleBook.png" alt="Rulebook" className="Rulebook-image" />
-    <img src="imgs/cardGame.png" alt="People playing card game" className="Card-game-image" />
-  </div>
-</div>
+        <div className="API2-explanation">
+          <div className='breaktext'>In short, RESTful APIs are like organized players following board game rules — neat and simple, but maybe not great when things get really wild.</div>
+        <div><img src="https://awskidsimages.s3.us-east-2.amazonaws.com/I+win.jpg" alt="Board game" className="Board-game-image" /></div> </div>
+      </div>
+
+      <Quiz questions={chapter2Questions} onFinish={handleQuizFinish} />
+    </div>
   );
 };
 

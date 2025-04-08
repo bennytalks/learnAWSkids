@@ -50,7 +50,7 @@ const Chapter1 = ({ onScore }) => {
 
   return (
     <div>
-      <header></header>
+      
       <div className='containerWeb'>
         <div className='API-container'>
         <div className="API-explanation">
@@ -79,7 +79,7 @@ const Chapter1 = ({ onScore }) => {
           <div><img src="https://awskidsimages.s3.us-east-2.amazonaws.com/pizza.png" alt="Pizza" className="Pizza-image" /></div>
         </div>
       </div>
-      <Quiz questions={chapter1Questions} onQuizFinish={handleQuizFinish} />
+      <Quiz questions={chapter1Questions} onFinish={handleQuizFinish} />
       </div>
       <div>
         </div>

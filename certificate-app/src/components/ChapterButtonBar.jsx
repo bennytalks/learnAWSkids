@@ -1,13 +1,17 @@
 import React from 'react';
-import '../css/ChapterButtonBar.css';
+import './ChapterButtonBar.css';
 import { useNavigate } from 'react-router-dom';
 
 const ChapterButtonBar = () => {
   const navigate = useNavigate();
 
   return (
+    <div className='chapterbarcontainer'>
     <div className="chapter-bar">
-      <div> Hi, welcome! Please choose a chapter</div>
+      
+      <button onClick={() => navigate('/homesplash')} className="chapter-button">
+        Home
+      </button>
       <button onClick={() => navigate('/Chapter1')} className="chapter-button">
         Chapter 1
       </button>
@@ -17,6 +21,13 @@ const ChapterButtonBar = () => {
       <button onClick={() => navigate('/Chapter3')} className="chapter-button">
         Chapter 3
       </button>
+      <button onClick={() => navigate('/Chapter4')} className="chapter-button">
+        Chapter 4
+      </button>
+      <button onClick={() => navigate('/CertificateForm')} className="chapter-button">
+        Certificate
+      </button>
+    </div>
     </div>
   );
 };

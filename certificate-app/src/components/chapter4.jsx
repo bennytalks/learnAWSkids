@@ -1,97 +1,123 @@
 import React from 'react';
-import './chapter4.css';
+import './chapter4.css'; // Reuse Chapter 1 styles
+import Quiz from './Quiz';
+import './Quiz.css';
 
-const Chapter4 = () => {
+const chapter4Questions = [
+  {
+    question: "What is a private cloud?",
+    choices: [
+      "A public space where everyone can share things",
+      "A safe place where only you or your family can store things",
+      "A place where only businesses can store their stuff"
+    ],
+    correctIndex: 1,
+  },
+  {
+    question: "What is a public cloud?",
+    choices: [
+      "A place where you can store things, but only you can see them",
+      "A big, open place where everyone can share and use things",
+      "A cloud that only stores pictures"
+    ],
+    correctIndex: 1,
+  },
+  {
+    question: "Which of these is an example of a public cloud?",
+    choices: [
+      "Google Photos",
+      "Netflix",
+      "YouTube"
+    ],
+    correctIndex: 2,
+  },
+  {
+    question: "What does a hybrid cloud do?",
+    choices: [
+      "It only uses one type of cloud for everything",
+      "It mixes both private and public clouds together",
+      "It’s only used for storing videos"
+    ],
+    correctIndex: 1,
+  },
+  {
+    question: "What is one example of a service that uses a private cloud?",
+    choices: [
+      "Netflix",
+      "Email",
+      "YouTube"
+    ],
+    correctIndex: 1,
+  }
+];
+
+const Chapter4 = ({ onScore }) => {
+  const handleQuizFinish = (score) => {
+    console.log("Chapter 4 score:", score);
+    if (onScore) onScore(score);
+    navigate("/congrats");
+  };
+
   return (
-    <div>
-    <header><h1>Cloud</h1></header>
+    <div className="containerWeb">
+      <div className="API-container">
+      <div className="API4-explanation">
+          The Cloud
+        </div>
+        <div className="API4-explanation">
+          Let’s imagine the cloud like a huge, magical library in the sky.
+          When you have something important like pictures, videos, or games, instead of keeping them in your room (on your computer),
+          you can send them up to the cloud. You can always get them back whenever you want, just by using the internet!
+        </div>
 
-    <div className="Cloud">
-      <div className="Cloud-explanation-pt1">
-        Let’s imagine the cloud like a huge, magical library in the sky. 
-        When you have something important like pictures, videos, or games, instead of keeping them in your room (on your computer), you 
-        can send them up to the cloud, which is like putting them in this giant, safe library. You can always get them back whenever 
-        you want, just by using the internet. The best part is that the library is so big that you don’t have to worry about 
-        running out of space!
+        <div className="API4-explanation">
+          <strong>AWS (Amazon Web Services)</strong> is like a super-powered cloud library.
+          It helps people store things, run programs, and even make websites and apps. AWS keeps everything safe and easy to reach.
+        </div>
+
+        <div className="API4-explanation">
+          <strong>To use the cloud, we need three things:</strong>
+          <ul>
+            <li><strong>Client:</strong> This is like you, using your phone or computer to ask the cloud for something.</li>
+            <li><strong>Network:</strong> This is the road (the internet) that takes your request to the cloud.</li>
+            <li><strong>Server:</strong> This is like a librarian who finds what you want and sends it back to you safely.</li>
+          </ul>
+        </div>
+
+        <div className="API4-explanation">
+          <strong>Private Cloud:</strong><br />
+          Imagine you have your own special library just for you and your family. It’s more secure and controlled. Only certain people
+          can access it.
+        </div>
+
+        <div className="API4-explanation">
+          <strong>Private Cloud Example:</strong><br />
+          Google Photos lets you store family pictures privately. Only people you trust can see them—just like a private cloud.
+        </div>
+
+        <div className="API4-explanation">
+          <strong>Public Cloud:</strong><br />
+          A huge library open to the public. Anyone can upload or access data. It’s shared and easy to use.
+        </div>
+
+        <div className="API4-explanation">
+          <strong>Public Cloud Example:</strong><br />
+          YouTube is a public cloud! Anyone can upload videos and everyone can watch them.
+        </div>
+
+        <div className="API4-explanation">
+          <strong>Hybrid Cloud:</strong><br />
+          Like having your private library at home but borrowing from a public library too. You can keep things private, but also get help when needed.
+        </div>
+
+        <div className="API4-explanation">
+          <strong>Hybrid Cloud Example:</strong><br />
+          Netflix stores movies in a private cloud but uses a public cloud when lots of people watch at once. It’s like having extra toy boxes!
+        </div>
       </div>
 
-      <div className="Cloud-explanation-pt2">
-        Now, AWS (Amazon Web Services) is like a special, super-powered cloud library. 
-        It helps people store things in the cloud, run programs, and even make their websites and apps. AWS makes sure everything is 
-        safe and that people can reach their stuff really fast, just like how you can get a book from the library whenever you need it.
-      </div>
-
-      <div className="Cloud-explanation-pt3">
-        To get to the cloud, we need three things: the client, the network, and the server.
-        <ol>
-          <li className="Client-explanation">
-            <h3 className="Client-header">Client:</h3>
-            This is like you, the person who wants to get something from the cloud. 
-            It could be your phone, tablet, or computer—anything that helps you reach the cloud.
-            When you want to see your pictures or play a game, you use your device as the client to 
-            ask for what you want.
-          </li>
-          <li className="Network-explanation">
-            <h3 className="Network-header">Network:</h3>
-            This is like the road that connects you to the cloud. It’s the internet! 
-            When you ask for something, your device (the client) sends your request through the network (the internet) to the cloud.
-          </li>
-          <li className="Server-explanation">
-            <h3 className="Server-header">Server:</h3>
-            The server is like a helpful librarian in the magical library. Once your request reaches 
-            the cloud (through the network), the server is the one that finds the thing you asked for and sends it back to you. 
-            It makes sure everything goes smoothly and safely.
-          </li>
-        </ol>
-      </div>
+      <Quiz questions={chapter4Questions} onFinish={handleQuizFinish} />
     </div>
-
-    <div className="Private-cloud">
-      <div className="Private-cloud-explanation">
-        <h3 className="Private-cloud-header">Private Cloud:</h3>
-        Imagine you have your own special library, just for you and your family. 
-        Only you can access the books (or pictures, files, etc.), and you can keep it in your house or somewhere private. 
-        This is like a private cloud—it's a space on the internet where only certain people or businesses can put their things. 
-        It’s more secure, and it’s controlled by the person or company that owns it.
-      </div>
-      <div className="Private-cloud-example">
-        Example: Imagine you use Google Photos to keep all your family pictures safe and private. 
-        Only your family can see the photos unless you choose to share them. This is like a private cloud—you can store things 
-        like photos, emails, or videos, and only certain people can access them. It’s a safe, private place just for you and the 
-        people you trust.
-      </div>
-    </div>
-
-    <div className="Public-cloud">
-      <div className="Public-cloud-explanation">
-        <h3 className="Public-cloud-header">Public Cloud:</h3>
-        Now, think about a huge library that everyone in the world can visit. It’s open to the public, 
-        and you can put your stuff there for everyone to use. A public cloud is like that. It’s a big, shared space on the internet
-        (like AWS or Google Cloud) where anyone can store things and use its services. It’s not private, but it’s easy to access, 
-        and many people share it.
-      </div>
-      <div className="Public-cloud-example">
-        Example: YouTube is a great example of a public cloud. Anyone can upload a video, 
-        and anyone can watch those videos. It’s like a big, public playground where people share videos, and everyone can enjoy them. 
-        The public cloud lets anyone use it without needing special permission.
-      </div>
-    </div>
-
-    <div className="Hybrid-cloud">
-      <div className="Hybrid-cloud-explanation">
-        <h3 className="Hybrid-cloud-header">Hybrid Cloud:</h3>
-        A hybrid cloud is like having both! Imagine you have your private library at home, but sometimes you borrow books 
-        from the big public library too. You can keep some things private and safe in your own library, but when you need more space 
-        or extra help, you can use the big public library. With a hybrid cloud, businesses can keep some things on their private cloud 
-        and use the public cloud for other things.
-      </div>
-      <div className="Hybrid-cloud-example">
-        Example: Netflix uses a hybrid cloud. It stores a lot of movies and shows on its own private cloud (to keep things safe and 
-        organized) but also uses the public cloud for extra help when many people want to watch at the same time. This is like having 
-        your own toy box at home, but when you need more toys for your friends to play with, you borrow them from a big toy store.
-      </div>
-    </div>
-  </div>
   );
 };
 

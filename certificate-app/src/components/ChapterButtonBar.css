@@ -1,7 +1,7 @@
 .chapter-bar {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     margin: 2rem 0;
     font-weight: 700;
@@ -20,5 +20,17 @@
   }
   
   .chapter-button:hover {
-    background-color: #357ab8;
+    background-color: #152eb8;
+  }
+
+  .chapterbarcontainer{
+    background-image: url(https://awskidsimages.s3.us-east-2.amazonaws.com/background1);
+    background-size: cover;
+    background-color: rgb(41, 141, 255);
+    width: max-content;
+    align-self: center;
+    padding-left:40px;
+    padding-right: 40px;
+    margin: 10px;
+    border-radius: 80px;
   }
