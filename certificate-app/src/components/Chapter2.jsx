@@ -1,7 +1,7 @@
 import React from 'react';
 import Quiz from './Quiz';
 import './Quiz.css';
-import './Chapter2.css';
+import './chapter2.css';
 
 const chapter2Questions = [
   {
