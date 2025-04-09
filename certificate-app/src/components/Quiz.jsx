@@ -22,7 +22,7 @@ const Quiz = ({ questions, onFinish }) => {
       setScore(finalScore);
 
       if (onFinish) {
-        onFinish(finalScore); // you can call your Lambda trigger here later
+        onFinish(finalScore); 
       }
     }
   };

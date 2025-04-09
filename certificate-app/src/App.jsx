@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import CertificateForm from './components/CertificateForm.jsx';
-import ChapterButtonBar from './components/ChapterButtonbar.jsx';
+import ChapterButtonBar from './components/ChapterButtonBar.jsx';
 
 import Chapter1 from './components/chapter1.jsx';
 import Chapter2 from './components/Chapter2.jsx';
