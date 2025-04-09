@@ -1,5 +1,5 @@
 import React from 'react';
-import './chapter4.css'; // Reuse Chapter 1 styles
+import './Chapter4.css'; 
 import Quiz from './Quiz';
 import './Quiz.css';
 
