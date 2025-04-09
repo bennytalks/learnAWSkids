@@ -1,5 +1,5 @@
 import React from 'react';
-import './Chapter4.css'; 
+import './chapter4.css'; 
 import Quiz from './Quiz';
 import './Quiz.css';
 
