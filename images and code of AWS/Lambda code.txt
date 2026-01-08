@@ -1,0 +1,117 @@
+const PDFDocument = require('pdfkit');
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+
+exports.handler = async (event) => {
+  let body = {};
+try {
+  if (event.body) {
+    body = typeof event.body === 'string' ? JSON.parse(event.body) : event.body;
+  }
+} catch (e) {
+  console.error('Could not parse event.body:', e.message);
+}
+  const { name, score } = body;
+  const doc = new PDFDocument({ size: 'A4', layout: 'landscape' });
+  const buffers = [];
+  const fileName = `certificates/certificate-${Date.now()}.pdf`;
+
+  doc.on('data', buffers.push.bind(buffers));
+
+  try {
+    const pdfPromise = new Promise((resolve, reject) => {
+      doc.on('end', async () => {
+        const pdfBuffer = Buffer.concat(buffers);
+        try {
+          await s3.putObject({
+            Bucket: 'certificateawskids',
+            Key: fileName,
+            Body: pdfBuffer,
+            ContentType: 'application/pdf',
+          }).promise();
+          resolve();
+        } catch (err) {
+          reject(err);
+        }
+      });
+    
+      (async () => {
+        try {
+          const logoData = await s3.getObject({
+            Bucket: 'certificateawskids',
+            Key: '35202596_party_popper.jpg', 
+          }).promise();
+    
+          doc.image(logoData.Body, 50, 40, { width: 100 });
+        } catch (err) {
+          console.error('Error loading image from S3:', err.message);
+        }
+    
+        const date = new Date().toLocaleDateString();
+    
+        doc.fillColor('#003366')
+           .fontSize(30)
+           .text('Certificate of Completion', { align: 'center' });
+    
+        doc.moveDown(2);
+    
+        doc.fontSize(20)
+           .fillColor('#000000')
+           .text(`This certifies that`, { align: 'center' });
+    
+        doc.moveDown();
+    
+        doc.font('Helvetica-Bold')
+           .fontSize(32)
+           .fillColor('#2E86C1')
+           .text(name || '[Name missing]', { align: 'center' });
+    
+        doc.moveDown();
+    
+        doc.font('Helvetica')
+           .fontSize(18)
+           .fillColor('#000000')
+           .text(`Has successfully completed the course with a score of ${score || '[score missing]'}.`, { align: 'center' });
+    
+        doc.moveDown(2);
+    
+        doc.fontSize(14)
+           .text(`Date: ${date}`, { align: 'right', margin: 50 });
+    
+        doc.rect(20, 20, doc.page.width - 40, doc.page.height - 40)
+           .lineWidth(2)
+           .strokeColor('#003366')
+           .stroke();
+    
+        doc.end();
+      })();
+    });
+    
+
+    await pdfPromise;
+
+    const signedUrl = s3.getSignedUrl('getObject', {
+      Bucket: 'certificateawskids',
+      Key: fileName,
+      Expires: 300,
+    });
+
+    return {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+      },
+      body: JSON.stringify({ certificateUrl: signedUrl }),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+      },
+      body: JSON.stringify({ error: 'Internal Server Error', details: error.message }),
+    };
+  }
+};
